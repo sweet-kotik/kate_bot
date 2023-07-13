@@ -9,9 +9,11 @@ from aiogram.fsm.state import default_state
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.types import (Message, KeyboardButton, 
                            ReplyKeyboardMarkup, ReplyKeyboardRemove)
+from config import Config, load_config
 
 # токен бота
-BOT_TOKEN = '5814309558:AAFrAqL0mNQHOX7V3c9uIc2-VvIIQo9kAvA'
+config: Config = load_config()
+BOT_TOKEN: str = config.tg_bot.token
 
 # Инициализируем хранилище (создаем экземпляр класса MemoryStorage)
 storage: MemoryStorage = MemoryStorage()
